@@ -8,11 +8,10 @@ services:
     container_name: kate-s-bird
     environment:
       - FLASK_ENV=production
-      - UPLOAD_FOLDER=/app/uploads
+      - UPLOAD_FOLDER=/index/uploads
     ports:
       - "1196:1196"
     volumes:
-      - ./static:/app/static
-      - ./data:/app/data
-      - ./instance:/app/instance
+      - ./static:/index/static
+      - ./data:/index/data
     restart: unless-stopped

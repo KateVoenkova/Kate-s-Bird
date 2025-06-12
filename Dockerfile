@@ -10,12 +10,12 @@ RUN apt-get update && apt-get install -y dos2unix
 
 # Копируем остальной код
 COPY . .
-RUN dos2unix /app/entrypoint.sh
-RUN chmod +x /app/entrypoint.sh
+RUN dos2unix /index/entrypoint.sh
+RUN chmod +x /index/entrypoint.sh
 
 # Открываем порт (по умолчанию 5000 для Flask)
 EXPOSE 1196
 
 # Запускаем Gunicorn, указывая модуль и приложение (app:app)
-WORKDIR /app
-CMD ["sh", "/app/entrypoint.sh"]
+WORKDIR /index
+CMD ["sh", "/index/entrypoint.sh"]
